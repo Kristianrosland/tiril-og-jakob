@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1fdee01f.chunk.css",
+    "main.js": "/static/js/main.e008bf19.chunk.js",
+    "main.js.map": "/static/js/main.e008bf19.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.490fa5f3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.490fa5f3.js.map",
+    "static/js/2.da4781dc.chunk.js": "/static/js/2.da4781dc.chunk.js",
+    "static/js/2.da4781dc.chunk.js.map": "/static/js/2.da4781dc.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.f7fcbd736a1b4cdbb1916224cf6f1dce.js": "/precache-manifest.f7fcbd736a1b4cdbb1916224cf6f1dce.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.1fdee01f.chunk.css.map": "/static/css/main.1fdee01f.chunk.css.map",
+    "static/js/2.da4781dc.chunk.js.LICENSE.txt": "/static/js/2.da4781dc.chunk.js.LICENSE.txt",
+    "static/media/bunad.png": "/static/media/bunad.55f0d281.png",
+    "static/media/checkmark.svg": "/static/media/checkmark.5fae9f58.svg",
+    "static/media/closed-envelope.svg": "/static/media/closed-envelope.bbb3f07d.svg",
+    "static/media/corona.png": "/static/media/corona.08a20260.png",
+    "static/media/cross.svg": "/static/media/cross.e660df7c.svg",
+    "static/media/edit.svg": "/static/media/edit.c4408d74.svg",
+    "static/media/elv.png": "/static/media/elv.17a97326.png",
+    "static/media/kart.png": "/static/media/kart.d9b0289b.png",
+    "static/media/klatring.png": "/static/media/klatring.026ccbfd.png",
+    "static/media/kristian.png": "/static/media/kristian.a143a2d8.png",
+    "static/media/location-pin.svg": "/static/media/location-pin.107f0bb1.svg",
+    "static/media/myra.svg": "/static/media/myra.cd33b5b9.svg",
+    "static/media/open-envelope.svg": "/static/media/open-envelope.bb60cfd7.svg",
+    "static/media/riddere.png": "/static/media/riddere.18636af2.png",
+    "static/media/right-chevron.svg": "/static/media/right-chevron.75bd23f0.svg",
+    "static/media/servise.png": "/static/media/servise.6560ebb7.png",
+    "static/media/solbriller.png": "/static/media/solbriller.684f5aa2.png",
+    "static/media/svolvaer.png": "/static/media/svolvaer.f52cb24d.png",
+    "static/media/toastmasters.png": "/static/media/toastmasters.837612e7.png",
+    "static/media/yellow-cross.svg": "/static/media/yellow-cross.2c320b98.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.490fa5f3.js",
+    "static/js/2.da4781dc.chunk.js",
+    "static/css/main.1fdee01f.chunk.css",
+    "static/js/main.e008bf19.chunk.js"
+  ]
+}
