@@ -1,0 +1,146 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+@breakpoint: 900px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+
+  @media all and (max-width: @breakpoint) {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+  }
+}
+
+.description {
+  width: 50%;
+  margin-top: 3rem;
+
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 300;
+
+  @media all and (max-width: @breakpoint) {
+    width: 95%;
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
+  }
+}
+
+.nicknameDescription {
+  font-size: 0.75rem;
+  max-width: 60%;
+  margin: auto;
+}
+
+.imageContainer {
+  position: relative;
+
+  @media all and (max-width: 475px) {
+    transform: scale(0.8);
+  }
+
+  @media all and (max-width: 375px) {
+    transform: scale(0.7);
+  }
+}
+
+.permanentMarker {
+  position: absolute;
+  font-family: @fontPermanentMarker;
+  color: @secondaryColor;
+  font-size: 1.25rem;
+
+  img {
+    position: absolute;
+  }
+}
+
+.advokaten {
+  left: -4rem;
+  top: -1.75rem;
+  transform: rotate(-15deg);
+
+  img {
+    transform: rotate(25deg);
+    top: 2rem;
+    left: 1rem;
+  }
+}
+
+.psykologen {
+  right: -4rem;
+  bottom: -1.75rem;
+  transform: rotate(-15deg);
+
+  img {
+    transform: rotate(225deg);
+    top: -2.5rem;
+    left: 5.5rem;
+  }
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-top: 3rem;
+}
+
+.contactInfo {
+  width: 50%;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  text-decoration: none;
+  color: @primaryColor;
+
+  @media all and (max-width: 1100px) {
+    font-size: 1rem;
+  }
+
+  @media all and (max-width: 1100px) {
+    width: 100%;
+    padding-left: 20%;
+  }
+
+  @media all and (max-width: 500px) {
+    padding-left: 10%;
+    font-size: 0.8rem;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+
+    margin-right: 1rem;
+  }
+
+  img.mail {
+    height: 20px;
+  }
+
+  img.fb {
+    width: 45px;
+    height: 40px;
+    margin-right: 0.5rem;
+    margin-left: -7.5px;
+  }
+}

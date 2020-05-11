@@ -1,0 +1,81 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.container {
+  width: 100%;
+  margin-top: @blockSpacing;
+
+  @media all and (max-width: @mobileLarge) {
+    margin-top: @mobileBlockSpacing;
+  }
+}
+
+.header {
+  color: white;
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faqList {
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.faq {
+  display: flex;
+  height: fit-content;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 200;
+  font-size: 0.8rem;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.questionContainer,
+.answer {
+  display: flex;
+  width: 20rem;
+  padding-bottom: 20px;
+}
+
+.questionContainer {
+  justify-content: flex-end;
+  padding-right: 20px;
+  border-right: 2px solid @secondaryColor;
+}
+
+.question {
+  width: 100%;
+  text-align: right;
+}
+
+.answer {
+  margin-left: 20px;
+}
+
+.contactInformation {
+  text-align: center;
+  color: #ffbc6b;
+}
+
+.faq:last-child .questionContainer {
+  padding-bottom: 100px;
+}
+
+@media all and (min-width: 700px) {
+  .faq {
+    letter-spacing: 4px;
+  }
+
+  .questionContainer,
+  .answer {
+    width: 100%;
+  }
+}

@@ -1,0 +1,382 @@
+@import "../less/colors.less";
+@import "../less/fonts.less";
+@import "../less/variables.less";
+
+.outerContainer {
+  width: 100%;
+  position: relative;
+  margin-top: @blockSpacing;
+
+  @media all and (max-width: @mobileLarge) {
+    margin-top: @mobileBlockSpacing;
+  }
+}
+
+.rsvpAndImageContainer {
+  width: 100%;
+  height: 32rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  @media all and (max-width: @mobileLarge) {
+    flex-direction: column;
+    overflow: visible;
+    height: auto;
+  }
+}
+
+.rsvpContainer {
+  height: 100%;
+  width: 30%;
+  margin-right: 2rem;
+
+  background-color: @white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2rem;
+  box-sizing: border-box;
+
+  transition: all 0.5s ease-in-out;
+  position: relative;
+
+  @media all and (min-width: @mobileLarge) and (max-width: 1500px) {
+    flex: 1 0 40%;
+  }
+
+  &.expanded {
+    width: 70%;
+    flex: 1 0 60%;
+
+    justify-content: flex-start;
+    @media all and (max-width: @mobileLarge) {
+      width: 100%;
+    }
+  }
+
+  @media all and (max-width: @mobileLarge) {
+    width: 100%;
+    min-height: 30rem;
+  }
+}
+
+.loggedInContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  color: @primaryColor;
+  font-family: @fontRoboto;
+  font-size: 50px;
+  text-align: center;
+
+  width: 100%;
+  border-bottom: 1px solid @secondaryColor;
+  padding-bottom: 0.5rem;
+}
+
+.description  {
+  text-align: center;
+  font-size: 1.25rem;
+  width: 100%;
+
+  div:first-of-type {
+    color: @secondaryColor;
+    margin-bottom: 20%;
+  }
+
+  div:last-of-type {
+    color: @primaryColor;
+  }
+}
+
+.inputAndErrorContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputField {
+  width: 100%;
+  height: 4rem;
+
+  background-color: @secondaryColor;
+  color: @white;
+  border: none;
+
+  text-align: center;
+  font-family: @fontRoboto;
+  font-size: 3rem;
+  letter-spacing: 10px;
+  box-sizing: border-box;
+
+  &:invalid {
+    padding-bottom: 0.8rem;
+  }
+
+  &:focus {
+    padding-bottom: 0;
+  }
+}
+
+.inputField::placeholder {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: @letterSpacingLarge;
+  color: @white;
+
+  line-height: 4rem;
+}
+
+.upsell {
+  font-family: @fontPermanentMarker;
+  font-size: 1.2rem;
+
+  color: @secondaryColor;
+
+  position: absolute;
+  bottom: -3rem;
+  left: -5rem;
+  transform: rotate(20deg);
+}
+
+.arrow {
+  height: auto;
+
+  position: absolute;
+  left: -3rem;
+  bottom: 1rem;
+
+  transform: scaleY(-1);
+}
+
+@media all and (max-width: 1100px) {
+  .upsell {
+    top: -2rem;
+    left: 3rem;
+    transform: rotate(0deg);
+    bottom: unset;
+  }
+
+  .arrow {
+    transform: scaleY(1) rotate(30deg);
+    top: -1rem;
+    left: 1rem;
+    bottom: unset;
+  }
+}
+
+.error {
+  color: @errorRed;
+}
+
+.elvImage {
+  height: 100%;
+  object-fit: cover;
+
+  @media all and (max-width: @mobileLarge) {
+    margin-top: 0.8rem;
+    height: unset;
+    width: 100%;
+  }
+}
+
+.formContainer {
+  min-height: 15rem;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  color: @primaryColor;
+
+  @media all and (max-width: @mobileLarge) {
+    flex-direction: column;
+  }
+}
+
+.formHeader {
+  font-size: 1.5rem;
+  color: @primaryColor;
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 1rem;
+  }
+}
+
+.form {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 0;
+  box-sizing: border-box;
+
+  @media all and (max-width: @mobileLarge) {
+    width: 100%;
+    padding: 1rem 0;
+    &:last-of-type {
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.attendingCheckboxAndLabel {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5rem;
+  cursor: pointer;
+
+  &:first-of-type {
+    margin-top: 2rem;
+  }
+}
+
+.attendingCheckbox {
+  height: 15px;
+  width: 15px;
+  margin-right: 1rem;
+
+  border: 1px solid @primaryColor;
+}
+
+.checked {
+  background-color: @primaryColor;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 2px solid @secondaryColor;
+  padding-left: 2rem;
+  height: 100%;
+
+  @media all and (max-width: @mobileLarge) {
+    height: 10rem;
+  }
+
+  .menuEntry {
+    display: flex;
+    flex-direction: column;
+
+    .courseHeader {
+      color: @primaryColor;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .courseDescription {
+      color: black;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+}
+
+.allergiesInput {
+  font-size: 1.2rem;
+  font-family: @fontRoboto;
+  letter-spacing: @letterSpacingLarge;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: left;
+
+  color: @secondaryColor;
+  background-color: white;
+  border: 1px solid @secondaryColor;
+
+  height: 7rem;
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 0.9rem;
+    height: 10rem;
+  }
+}
+
+.allergiesInput::placeholder {
+  font-size: 1.2rem;
+  color: @secondaryColor;
+
+  @media all and (max-width: @mobileLarge) {
+    font-size: 0.8rem;
+  }
+}
+
+.saveButton {
+  width: fit-content;
+  margin-top: 0.5rem;
+  margin-left: auto;
+
+  font-size: 1.15rem;
+  font-family: @fontRoboto;
+  text-transform: uppercase;
+  letter-spacing: @letterSpacingMedium;
+
+  color: @primaryColor;
+  background-color: white;
+
+  cursor: pointer;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  img {
+    height: 13px;
+    width: 13px;
+    margin-left: 5px;
+  }
+
+  @media all and (min-width: @mobileLarge) {
+    margin-top: 1rem;
+  }
+}
+
+.attendingListItem {
+  img {
+    width: 14px;
+    height: 14px;
+
+    margin-right: 1rem;
+    margin-left: 2px;
+  }
+
+  margin-top: 1.5rem;
+}
+
+.allergiesHeader {
+  color: @primaryColor;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.allergiesText {
+  color: @secondaryColor;
+  font-size: 0.9rem;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  cursor: pointer;
+}
