@@ -1,0 +1,60 @@
+@import "../less/colors.less";
+@import "../less/variables.less";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 3rem;
+
+  img {
+    min-height: 400px;
+  }
+
+  @media all and (max-width: @mobileLarge) {
+    flex-direction: column;
+
+    img {
+      min-height: unset;
+      width: 100%;
+    }
+  }
+}
+
+.rightBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  color: black;
+  background-color: @lightOrange;
+  height: 9rem;
+  width: 100%;
+  max-width: 20rem;
+  padding: 0 2rem;
+  margin-left: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+
+  @media all and (max-width: @mobileLarge) {
+    margin-top: 2rem;
+    margin-left: 0;
+    height: 6rem;
+    width: 80%;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  span {
+    position: absolute;
+    right: 0;
+    bottom: -3rem;
+    font-size: 1.4rem;
+
+    color: @lightBlue;
+  }
+}

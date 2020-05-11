@@ -2,30 +2,29 @@ import React, { useRef } from "react";
 
 import Toastmasters from "./components/Toastmasters";
 import Gifts from "./components/Gifts";
-import RSVPDataWrapper from "./components/RSVPDataWrapper";
 import Countdown from "./components/Countdown";
 import Program from "./components/Program";
 import OmBrudeparet from "./components/OmBrudeparet";
 import Forlovere from "./components/Forlovere";
 import FAQ from "./components/FAQ";
 import AdminApp from "./admin/AdminApp";
-import CoronaInformation from "./components/CoronaInformation";
 
 import { FirebaseAuthProvider } from "@react-firebase/auth";
 import config from "./firebase.config.js";
 import firebase from "firebase/app";
 import "firebase/auth";
 
-import svolvaerGeita from "./images/svolvaer.png";
+import signatur from "./images/signatur.png";
 import css from "./app.less";
+import Header from "./components/Header";
 
 /*****************************/
 /* HUSK Å ENDRE BEGGE STEDER */
 /*****************************/
 const menuItems = [
+  { text: "Vår historie" },
   { text: "Kommer du?" },
   { text: "Tale?" },
-  { text: "Hvem er vi?" },
   { text: "Program" },
   { text: "Gaveønsker" },
   { text: "FAQ" },
@@ -47,7 +46,7 @@ const App = () => {
       ref = toastmasterRef;
     } else if (menuItem === "Program") {
       ref = programRef;
-    } else if (menuItem === "Hvem er vi?") {
+    } else if (menuItem === "Vår historie") {
       ref = omBrudeparetRef;
     } else if (menuItem === "Gaveønsker") {
       ref = giftsRef;
@@ -68,15 +67,18 @@ const App = () => {
         <AdminApp />
       ) : (
         <div className={css.app}>
-          <div className={css.contentContainer}>
-            <h1 className={css.header}>Marie & Daniel</h1>
-            <p className={css.date}>07.11.2020</p>
-            <div className={css.gifterSeg}>Gifter seg!</div>
+          <Countdown />
 
+          <div className={css.contentContainer}>
             <div className={css.headerImageContainer}>
-              <div className={css.hashtag}>#marieogdaniel2020</div>
-              <img src={svolvaerGeita} alt="Daniel og Marie på svolværgeita" />
+              <img
+                src={signatur}
+                alt="Signatur"
+                className={css.signatureHeaderImg}
+              />
+              <div className={css.gifterSeg}>Gifter seg!</div>
             </div>
+            <p className={css.date}>03.07.2021</p>
 
             <div className={css.menuBar}>
               {menuItems.map((item) => (
@@ -90,23 +92,13 @@ const App = () => {
               ))}
             </div>
 
-            <Countdown />
-
-            <CoronaInformation />
-
-            <RSVPDataWrapper refProp={rsvpRef} />
-
-            <Toastmasters refProp={toastmasterRef} />
+            <Header />
 
             <OmBrudeparet refProp={omBrudeparetRef} />
 
-            <Forlovere />
-
             <Program refProp={programRef} />
 
-            <Gifts refProp={giftsRef} />
-
-            <FAQ refProp={faqRef} />
+            <Toastmasters refProp={toastmasterRef} />
           </div>
         </div>
       )}

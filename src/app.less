@@ -38,6 +38,7 @@ html {
 
   width: 100%;
   max-width: 1300px;
+  padding-top: 3rem;
 }
 
 .header {
@@ -83,43 +84,41 @@ html {
   }
 }
 
+.headerImageContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.signatureHeaderImg {
+  @media all and (max-width: @mobileLarge) {
+    max-width: 65%;
+  }
+}
+
 .gifterSeg {
-  color: @lightOrange;
+  color: @darkOrange;
   font-family: @fontPermanentMarker;
   font-size: 1.25rem;
   letter-spacing: @letterSpacingLarge;
 
   position: absolute;
-  top: 4rem;
-  right: 17.5vw;
-  transform: rotate(-20deg);
+  right: -6rem;
+  bottom: 2rem;
 
-  @media all and (min-width: 1200px) {
-    right: 25vw;
-  }
+  transform: rotate(-15deg);
 
   @media all and (max-width: @mobileLarge) {
-    top: 3rem;
-    right: 5vw;
-    font-size: 1.1rem;
-  }
-
-  @media all and (max-width: 700px) {
-    transform: rotate(-7deg);
-    top: 5.5rem;
-    right: 8vw;
-    font-size: 0.8rem;
-  }
-
-  @media all and (max-width: 400px) {
-    transform: rotate(-20deg);
-    top: 5rem;
-    right: 3vw;
+    font-size: 1rem;
+    right: 0rem;
+    bottom: 1rem;
+    transform: rotate(-10deg);
   }
 }
 
 .date {
-  color: @white;
+  color: black;
   margin: 1rem 0;
 
   font-weight: 300;
@@ -127,23 +126,6 @@ html {
 
   @media all and (max-width: @mobileLarge) {
     font-size: 15px;
-  }
-}
-
-.headerImageContainer {
-  position: relative;
-  width: 100%;
-
-  @media all and (max-width: 600px) {
-    width: 200%;
-  }
-
-  @media all and (max-width: 900px) {
-    width: 150%;
-  }
-
-  img {
-    width: 100%;
   }
 }
 
@@ -160,19 +142,14 @@ html {
 .menuItem {
   font-family: @fontRoboto;
   letter-spacing: @letterSpacingLarge;
-  color: @white;
+  color: @darkOrange;
 
   @media all and (max-width: 625px) {
     font-size: 0.8rem;
     letter-spacing: @letterSpacingSmall;
   }
 
-  &::after {
-    content: "|";
-    font-weight: 400;
-    color: @lightOrange;
-    margin: 0 1rem;
-  }
+  margin: 0 1rem;
 
   &:last-of-type::after {
     content: none;

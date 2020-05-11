@@ -2,7 +2,7 @@ import React from "react";
 import css from "./countdown.less";
 
 const getTime = () => {
-  const bryllupsTime = new Date("07 Nov 2020 11:30:00 GMT");
+  const bryllupsTime = new Date("03 Jul 2021 11:30:00 GMT");
   const today = new Date();
 
   const seconds = (bryllupsTime - today) / 1000;
@@ -10,7 +10,7 @@ const getTime = () => {
   return {
     days: Math.floor(seconds / 86400),
     hours: Math.floor((seconds / 3600) % 24),
-    minutes: Math.floor((seconds / 60) % 60)
+    minutes: Math.floor((seconds / 60) % 60),
   };
 };
 
