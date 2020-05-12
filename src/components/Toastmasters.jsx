@@ -29,11 +29,20 @@ const Toastmasters = ({ refProp }) => {
 const ContactInfo = () => (
   <>
     Telefon: <br />
-    957 99 842 <br /> <br />
+    <a href="tel:+4795799842">957 99 842</a>
+    <br /> <br />
     Facebook: <br />
-    Benjamin Jakobsen <br /> <br />
+    <a
+      href="https://www.facebook.com/benjamin.jakobsen.10"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Benjamin Jakobsen
+    </a>
+    <br /> <br />
     Email: <br />
-    toastmaster@tirilogjakob.no <br /> <br />
+    <a href="mailto:toastmaster@tirilogjakob.no">toastmaster@tirilogjakob.no</a>
+    <br /> <br />
   </>
 );
 

@@ -16,6 +16,16 @@
   margin-top: @blockSpacing;
   background-color: @lightBlue;
 
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
   @media all and (max-width: @breakpoint) {
     margin-top: @mobileBlockSpacing;
     flex-direction: column;

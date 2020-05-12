@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 
 import Toastmasters from "./components/Toastmasters";
-import Gifts from "./components/Gifts";
 import Countdown from "./components/Countdown";
 import Program from "./components/Program";
 import OmBrudeparet from "./components/OmBrudeparet";
-import Forlovere from "./components/Forlovere";
-import FAQ from "./components/FAQ";
+import Collage from "./components/Collage";
+import Information from "./components/Information";
+import Header from "./components/Header";
 import AdminApp from "./admin/AdminApp";
 
 import { FirebaseAuthProvider } from "@react-firebase/auth";
@@ -14,18 +14,19 @@ import config from "./firebase.config.js";
 import firebase from "firebase/app";
 import "firebase/auth";
 
+import blomst from "./images/blomst.png";
+import viGlederOss from "./images/vi-gleder-oss.png";
 import signatur from "./images/signatur.png";
 import css from "./app.less";
-import Header from "./components/Header";
 
 /*****************************/
 /* HUSK Å ENDRE BEGGE STEDER */
 /*****************************/
 const menuItems = [
   { text: "Vår historie" },
-  { text: "Kommer du?" },
-  { text: "Tale?" },
   { text: "Program" },
+  { text: "Tale?" },
+  { text: "Kommer du?" },
   { text: "Gaveønsker" },
   { text: "FAQ" },
 ];
@@ -99,6 +100,17 @@ const App = () => {
             <Program refProp={programRef} />
 
             <Toastmasters refProp={toastmasterRef} />
+
+            <Collage />
+
+            <Information />
+
+            <img src={blomst} alt="Pynteblomst" className={css.pynteblomst} />
+
+            <div className={css.viGlederOssContainer}>
+              <img src={viGlederOss} alt="Bilde av Tiril og Jakob" />
+              <div>Vi gleder oss ♡</div>
+            </div>
           </div>
         </div>
       )}

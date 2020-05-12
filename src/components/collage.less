@@ -1,0 +1,67 @@
+@import "../less/variables.less";
+@import "../less/colors.less";
+
+.container {
+  margin-top: @blockSpacing;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  @media all and (max-width: @mobileLarge) {
+    margin-top: @mobileBlockSpacing;
+  }
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 28%;
+  max-width: 28%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+
+  &:first-of-type {
+    flex: 44%;
+    max-width: 44%;
+  }
+}
+
+.column img {
+  margin-top: 2rem;
+  vertical-align: middle;
+  width: 100%;
+
+  object-fit: contain;
+}
+
+.hashtag {
+  position: absolute;
+  bottom: 8rem;
+  left: 5rem;
+
+  color: @lightBlue;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .hashtag {
+    font-size: 1.5rem;
+    bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+
+    &:first-of-type {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .hashtag {
+    bottom: -4rem;
+    font-size: 1.5rem;
+  }
+}
