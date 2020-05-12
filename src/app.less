@@ -162,8 +162,12 @@ html {
 }
 
 .viGlederOssContainer {
-  width: fit-content;
   position: relative;
+
+  img {
+    object-fit: contain;
+    max-width: 100%;
+  }
 
   div {
     background-color: rgba(160, 207, 211, 0.75);
@@ -173,5 +177,11 @@ html {
     top: 20%;
     left: 1rem;
     padding: 1rem 2rem;
+
+    @media all and (max-width: 480px) {
+      top: 10%;
+      left: 1rem;
+      padding: 0.75rem 1.5rem;
+    }
   }
 }
