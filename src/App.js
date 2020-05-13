@@ -7,6 +7,7 @@ import OmBrudeparet from "./components/OmBrudeparet";
 import Collage from "./components/Collage";
 import Information from "./components/Information";
 import Header from "./components/Header";
+import Gifts from "./components/Gifts";
 import AdminApp from "./admin/AdminApp";
 
 import { FirebaseAuthProvider } from "@react-firebase/auth";
@@ -106,6 +107,8 @@ const App = () => {
             <Information />
 
             <img src={blomst} alt="Pynteblomst" className={css.pynteblomst} />
+
+            <Gifts />
 
             <div className={css.viGlederOssContainer}>
               <img src={viGlederOss} alt="Bilde av Tiril og Jakob" />

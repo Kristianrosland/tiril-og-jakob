@@ -163,6 +163,10 @@ html {
 
 .viGlederOssContainer {
   position: relative;
+  margin-top: @blockSpacing;
+  @media all and (max-width: @mobileLarge) {
+    margin-top: @mobileBlockSpacing;
+  }
 
   img {
     object-fit: contain;

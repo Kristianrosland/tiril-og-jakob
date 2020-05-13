@@ -1,47 +1,72 @@
 import React from "react";
-import copenhagen from "../images/copenhagen.png";
-import servise from "../images/servise.png";
 import css from "./gifts.less";
+import hardanger from "../images/hardanger.png";
+import rosendahl from "../images/rosendahl.png";
 
-const gavelisteUrl =
-  "https://www.gavelisten.no/list/XRTDTXF/guest?fbclid=IwAR3DIOIo-j4RhixuOIAgiThyuCWQt0Ufe089jjW7qEQqX5EsBDgwd4t42yk";
+const kitchn = "https://www.kitchn.no/onskeliste/111394";
+const jernia =
+  "https://www.jernia.no/wishlist/c671f920-bffc-4849-89af-280e30a68fbd";
 
 const Gifts = ({ refProp }) => {
   return (
     <div className={css.container} ref={refProp}>
-      <div className={css.header}>Gaveønsker</div>
-      <div className={css.topContainer}>
-        <div className={css.logoContainer}>
-          <img src={copenhagen} alt="Royal Copenhagen logo" />
-        </div>
-        <p className={css.description}>
-          Den viktigste gaven for oss er å få samlet venner og familie fra{" "}
-          <span>nord</span>, <span>sør</span>, <span>øst</span> og{" "}
-          <span>vest</span> på dagen vår. Vi ønsker oss i hovedsak deler av
-          Musselmalt Riflet servise fra Royal Copenhagen. Delene av serviset og
-          våre andre ønsker finner du samlet i gavelisten under.
-        </p>
-      </div>
-      <img
-        src={servise}
-        alt="Musselmalt riflet servise fra Copenhagen"
-        className={css.servise}
+      <h3>Gaveønsker</h3>
+      <Section
+        header="Bidrag til bryllupsreise"
+        text={
+          <>
+            <div>
+              Vi planglegger vår bryllupsreise og vi tar gjerne i mot støtte til
+              den!
+            </div>
+            <div>
+              Bidrag kan settes inn på konton 1214.37.67432 (Jakob Skretting
+              Jansen)
+            </div>
+          </>
+        }
       />
-
-      <div className={css.link}>
-        Trykk{" "}
-        <a href={gavelisteUrl} target="__blank">
-          her
-        </a>{" "}
-        for å se gavelisten
-      </div>
-
-      <div className={css.psst1}>Psst..</div>
-      <div className={css.psst2}>
-        Husk å registrere gaven som kjøpt inne på gavelisten
-      </div>
+      <Section
+        header="Ønskeliste fra Kitchn"
+        text={
+          <>
+            <div>
+              Vi ønsker oss i hovedsak deler fra Grand Cru-sereien til
+              Rosendahl.
+            </div>
+            <span>Liste over ønskene fra Kitch´n finner dere</span>
+            <a href={kitchn} target="_blank" rel="noopener noreferrer">
+              her.
+            </a>
+          </>
+        }
+        img={rosendahl}
+      />
+      <Section
+        header="Ønskeliste fra Jernia"
+        text={
+          <>
+            <div>Vi ønsker oss bestikket Fjord fra Hardanger bestikk.</div>
+            <span>Liste over ønskene fra Jernia finner dere</span>
+            <a href={jernia} target="_blank" rel="noopener noreferrer">
+              her.
+            </a>
+          </>
+        }
+        img={hardanger}
+      />
     </div>
   );
 };
+
+const Section = ({ header, text, img }) => (
+  <>
+    <div className={css.header}>{header}</div>
+    <div className={css.textAndImage}>
+      <div className={css.text}>{text}</div>
+      {img && <img src={img} alt="Ønskelistebilde" />}
+    </div>
+  </>
+);
 
 export default Gifts;
