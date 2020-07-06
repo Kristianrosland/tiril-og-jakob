@@ -41,7 +41,9 @@ const ContactInfo = () => (
     </a>
     <br /> <br />
     Email: <br />
-    <a href="mailto:toastmaster@tirilogjakob.no">toastmaster@tirilogjakob.no</a>
+    <a href="mailto:toastmastertirilogjakob@gmail.com">
+      toastmastertirilogjakob@gmail.com
+    </a>
     <br /> <br />
   </>
 );
