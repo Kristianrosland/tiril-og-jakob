@@ -16,9 +16,10 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 import blomst from "./images/blomst.png";
-import viGlederOss from "./images/vi-gleder-oss.png";
+import viGlederOss from "./images/vi-gleder-oss2.png";
 import signatur from "./images/signatur.png";
 import css from "./app.less";
+import BBQ from "./components/BBQ";
 
 /*****************************/
 /* HUSK Å ENDRE BEGGE STEDER */
@@ -27,24 +28,18 @@ const menuItems = [
   { text: "Vår historie" },
   { text: "Program" },
   { text: "Tale?" },
-  { text: "Kommer du?" },
   { text: "Gaveønsker" },
-  { text: "FAQ" },
 ];
 
 const App = () => {
-  const rsvpRef = useRef(null);
   const toastmasterRef = useRef(null);
   const giftsRef = useRef(null);
   const programRef = useRef(null);
   const omBrudeparetRef = useRef(null);
-  const faqRef = useRef(null);
 
   const scrollTo = (menuItem) => {
     let ref = null;
-    if (menuItem === "Kommer du?") {
-      ref = rsvpRef;
-    } else if (menuItem === "Tale?") {
+    if (menuItem === "Tale?") {
       ref = toastmasterRef;
     } else if (menuItem === "Program") {
       ref = programRef;
@@ -52,8 +47,6 @@ const App = () => {
       ref = omBrudeparetRef;
     } else if (menuItem === "Gaveønsker") {
       ref = giftsRef;
-    } else if (menuItem === "FAQ") {
-      ref = faqRef;
     }
 
     if (ref && ref.current && ref.current.offsetTop) {
@@ -108,11 +101,18 @@ const App = () => {
 
             <img src={blomst} alt="Pynteblomst" className={css.pynteblomst} />
 
-            <Gifts />
+            <BBQ />
+
+            <Gifts refProp={giftsRef} />
 
             <div className={css.viGlederOssContainer}>
               <img src={viGlederOss} alt="Bilde av Tiril og Jakob" />
-              <div>Vi gleder oss ♡</div>
+              <div className={css.viGlederOss}>Vi gleder oss ♡</div>
+              <div className={css.questionsContainer}>
+                {
+                  "Noen spørsmål? Ta kontakt med Tiril (959 37 513) eller Jakob (915 69 257)"
+                }
+              </div>
             </div>
           </div>
         </div>

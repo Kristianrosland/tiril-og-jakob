@@ -173,19 +173,56 @@ html {
     max-width: 100%;
   }
 
-  div {
+  .viGlederOss {
     background-color: rgba(160, 207, 211, 0.75);
     color: white;
 
     position: absolute;
-    top: 20%;
-    left: 1rem;
+    top: 35%;
+    left: 3rem;
     padding: 1rem 2rem;
 
-    @media all and (max-width: 480px) {
-      top: 10%;
-      left: 1rem;
-      padding: 0.75rem 1.5rem;
+    @media all and (max-width: 800px) {
+      top: 40%;
+      left: 1.5rem;
+      padding: 0.75rem 1.25rem;
     }
+  }
+}
+
+.questionsContainer {
+  font-size: 1.5rem;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  box-sizing: border-box;
+  background-color: @lightBlue;
+  margin-top: 1.5rem;
+}
+
+@media all and (max-width: 1200px) {
+  .questionsContainer {
+    font-size: 1.25rem;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .questionsContainer {
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 800px) {
+  .questionsContainer {
+    font-size: 0.75rem;
+  }
+}
+@media all and (max-width: 400px) {
+  .questionsContainer {
+    font-size: 0.65rem;
   }
 }

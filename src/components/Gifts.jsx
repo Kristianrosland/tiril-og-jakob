@@ -20,7 +20,7 @@ const Gifts = ({ refProp }) => {
               den!
             </div>
             <div>
-              Bidrag kan settes inn på konton 1214.37.67432 (Jakob Skretting
+              Bidrag kan settes inn på konton 1224.27.56353 (Jakob Skretting
               Jansen)
             </div>
           </>
@@ -64,7 +64,13 @@ const Section = ({ header, text, img }) => (
     <div className={css.header}>{header}</div>
     <div className={css.textAndImage}>
       <div className={css.text}>{text}</div>
-      {img && <img src={img} alt="Ønskelistebilde" />}
+      {img && (
+        <img
+          className={css.hideOnSmallScreen}
+          src={img}
+          alt="Ønskelistebilde"
+        />
+      )}
     </div>
   </>
 );
