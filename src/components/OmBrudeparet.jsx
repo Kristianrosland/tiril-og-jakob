@@ -36,8 +36,8 @@ const TextContent = () => {
       <br />
       <div className={css.extraSpacing} />
       Nesten 5 år senere gikk Jakob ned på kne på Fløien 21. desember 2019. Nå
-      begynner et nytt kapittel i historien deres og vil gjerne invitere dere
-      til å ta en del av det!
+      begynner et nytt kapittel i historien deres og dette vil de gjerne
+      invitere dere til å ta en del i!
     </>
   );
 };

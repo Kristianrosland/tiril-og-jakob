@@ -5,7 +5,7 @@ import rosendahl from "../images/rosendahl.png";
 
 const kitchn = "https://www.kitchn.no/onskeliste/111394";
 const jernia =
-  "https://www.jernia.no/wishlist/c671f920-bffc-4849-89af-280e30a68fbd";
+  "https://jernia.no/wishlist/e9c93fb2-b820-4bc2-8313-da560dc50066";
 
 const Gifts = ({ refProp }) => {
   return (

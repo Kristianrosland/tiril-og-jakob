@@ -1,0 +1,118 @@
+@import "../less/colors.less";
+@import "../less/variables.less";
+
+.container {
+  margin-top: @blockSpacing;
+  margin-bottom: 4rem;
+
+  @media all and (max-width: @mobileLarge) {
+    margin-top: @mobileBlockSpacing;
+  }
+
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.header {
+  font-size: 1.5rem;
+  width: fit-content;
+  padding: 0 1.5rem 0.5rem 1.5rem;
+  border-bottom: 1px solid black;
+}
+
+.description {
+  margin-top: 2rem;
+}
+
+.svarfrist {
+  margin-top: 2.5rem;
+  span {
+    font-weight: bold;
+  }
+}
+
+.input {
+  background-color: white;
+  border-radius: 0;
+  border: 2px solid @lightBlue;
+  margin-top: 2.5rem;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.input:first-of-type {
+  margin-top: 3rem;
+}
+
+.input::placeholder {
+  letter-spacing: 2.5px;
+}
+
+.button {
+  width: fit-content;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+
+  background-color: white;
+  border: 2px solid @darkOrange;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #fff8f2;
+}
+
+.button:disabled {
+  border: 2px solid lightgray;
+  background-color: white;
+}
+
+.attendingCheckboxAndLabel:first-of-type {
+  margin-top: 2.5rem;
+}
+
+.attendingCheckboxAndLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1.5rem;
+  label {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+.attendingCheckbox {
+  background-color: white;
+  border: 2px solid @darkOrange;
+  width: 30px;
+  height: 30px;
+}
+
+.attendingCheckbox.checked {
+  background-color: @darkOrange;
+}
+
+.error {
+  color: red;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.5rem;
+}
+
+.spinnerContainer {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.feedback {
+  margin: 1rem 0;
+}

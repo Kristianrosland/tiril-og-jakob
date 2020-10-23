@@ -8,7 +8,6 @@ import Collage from "./components/Collage";
 import Information from "./components/Information";
 import Header from "./components/Header";
 import Gifts from "./components/Gifts";
-import AdminApp from "./admin/AdminApp";
 
 import { FirebaseAuthProvider } from "@react-firebase/auth";
 import config from "./firebase.config.js";
@@ -20,6 +19,9 @@ import viGlederOss from "./images/vi-gleder-oss2.png";
 import signatur from "./images/signatur.png";
 import css from "./app.less";
 import BBQ from "./components/BBQ";
+import Attending from "./components/Attending";
+
+import classNames from "classnames";
 
 /*****************************/
 /* HUSK Å ENDRE BEGGE STEDER */
@@ -28,6 +30,7 @@ const menuItems = [
   { text: "Vår historie" },
   { text: "Program" },
   { text: "Tale?" },
+  { text: "Kommer du?" },
   { text: "Gaveønsker" },
 ];
 
@@ -36,6 +39,7 @@ const App = () => {
   const giftsRef = useRef(null);
   const programRef = useRef(null);
   const omBrudeparetRef = useRef(null);
+  const rsvpRef = useRef(null);
 
   const scrollTo = (menuItem) => {
     let ref = null;
@@ -47,6 +51,8 @@ const App = () => {
       ref = omBrudeparetRef;
     } else if (menuItem === "Gaveønsker") {
       ref = giftsRef;
+    } else if (menuItem === "Kommer du?") {
+      ref = rsvpRef;
     }
 
     if (ref && ref.current && ref.current.offsetTop) {
@@ -54,69 +60,69 @@ const App = () => {
     }
   };
 
-  const showAdmin = window.location.href.includes("admin");
-
   return (
     <FirebaseAuthProvider {...config} firebase={firebase}>
-      {showAdmin ? (
-        <AdminApp />
-      ) : (
-        <div className={css.app}>
-          <Countdown />
+      <div className={css.app}>
+        <Countdown />
 
-          <div className={css.contentContainer}>
-            <div className={css.headerImageContainer}>
-              <img
-                src={signatur}
-                alt="Signatur"
-                className={css.signatureHeaderImg}
-              />
-              <div className={css.gifterSeg}>Gifter seg!</div>
-            </div>
-            <p className={css.date}>03.07.2021</p>
+        <div className={css.contentContainer}>
+          <div className={css.headerImageContainer}>
+            <img
+              src={signatur}
+              alt="Signatur"
+              className={css.signatureHeaderImg}
+            />
+            <div className={css.gifterSeg}>Gifter seg!</div>
+          </div>
+          <p className={css.date}>03.07.2021</p>
 
-            <div className={css.menuBar}>
-              {menuItems.map((item) => (
-                <span
-                  key={item.text}
-                  className={css.menuItem}
-                  onClick={() => scrollTo(item.text)}
-                >
-                  {item.text}
-                </span>
-              ))}
-            </div>
+          <div className={css.menuBar}>
+            {menuItems.map((item) => (
+              <span
+                key={item.text}
+                className={classNames(css.menuItem, {
+                  [css.rsvpMenuItem]: item.text === "Kommer du?",
+                })}
+                onClick={() => scrollTo(item.text)}
+              >
+                {item.text}
+              </span>
+            ))}
+          </div>
 
-            <Header />
+          <Header />
 
-            <OmBrudeparet refProp={omBrudeparetRef} />
+          <OmBrudeparet refProp={omBrudeparetRef} />
 
-            <Program refProp={programRef} />
+          <Program refProp={programRef} />
 
-            <Toastmasters refProp={toastmasterRef} />
+          <Toastmasters refProp={toastmasterRef} />
 
-            <Collage />
+          <Collage />
 
-            <Information />
+          <Information />
 
-            <img src={blomst} alt="Pynteblomst" className={css.pynteblomst} />
+          <img src={blomst} alt="Pynteblomst" className={css.pynteblomst} />
 
-            <BBQ />
+          <BBQ />
 
-            <Gifts refProp={giftsRef} />
+          <Attending refProp={rsvpRef} />
 
-            <div className={css.viGlederOssContainer}>
-              <img src={viGlederOss} alt="Bilde av Tiril og Jakob" />
-              <div className={css.viGlederOss}>Vi gleder oss ♡</div>
-              <div className={css.questionsContainer}>
-                {
-                  "Noen spørsmål? Ta kontakt med Tiril (959 37 513) eller Jakob (915 69 257)"
-                }
-              </div>
+          <img src={blomst} alt="Pynteblomst" className={css.pynteblomst} />
+
+          <Gifts refProp={giftsRef} />
+
+          <div className={css.viGlederOssContainer}>
+            <img src={viGlederOss} alt="Bilde av Tiril og Jakob" />
+            <div className={css.viGlederOss}>Vi gleder oss ♡</div>
+            <div className={css.questionsContainer}>
+              {
+                "Noen spørsmål? Ta kontakt med Tiril (959 37 513) eller Jakob (915 69 257)"
+              }
             </div>
           </div>
         </div>
-      )}
+      </div>
     </FirebaseAuthProvider>
   );
 };

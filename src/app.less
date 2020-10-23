@@ -93,7 +93,7 @@ html {
 
 .signatureHeaderImg {
   @media all and (max-width: @mobileLarge) {
-    max-width: 65%;
+    // max-width: 65%;
   }
 }
 
@@ -131,7 +131,7 @@ html {
 
 .menuBar  {
   @media all and (max-width: @mobileLarge) {
-    display: none;
+    // display: none;
   }
 
   margin-top: 1.5rem;
@@ -140,13 +140,13 @@ html {
 }
 
 .menuItem {
+  display: flex;
   font-family: @fontRoboto;
   letter-spacing: @letterSpacingLarge;
   color: @darkOrange;
 
   @media all and (max-width: 625px) {
-    font-size: 0.8rem;
-    letter-spacing: @letterSpacingSmall;
+    display: none;
   }
 
   margin: 0 1rem;
@@ -159,6 +159,10 @@ html {
     cursor: pointer;
     font-weight: 800;
   }
+}
+
+.rsvpMenuItem {
+  display: flex;
 }
 
 .viGlederOssContainer {
