@@ -41,6 +41,24 @@ html {
   padding-top: 3rem;
 }
 
+.picturesLink {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  color: @darkOrange;
+  font-size: 1.5rem;
+  font-family: @fontRoboto;
+  letter-spacing: @letterSpacingLarge;
+  text-decoration: none;
+}
+
+.picturesLink:hover {
+  text-decoration: underline;
+}
+
+.picturesLink::after {
+  content: ' ♥';
+}
+
 .header {
   padding: 1rem 2rem;
   margin: 0 auto;

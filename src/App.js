@@ -72,7 +72,7 @@ const App = () => {
               alt="Signatur"
               className={css.signatureHeaderImg}
             />
-            <div className={css.gifterSeg}>Gifter seg!</div>
+            {/*<div className={css.gifterSeg}>Gifter seg!</div>*/}
           </div>
           <p className={css.date}>03.07.2021</p>
 
@@ -89,6 +89,13 @@ const App = () => {
               </span>
             ))}
           </div>
+
+          <a className={css.picturesLink} 
+            href="https://drive.google.com/drive/folders/16qMkFASmXq04Y0C6G4EEufNaKjxNGdLf"
+            target="_blank" rel="noopener noreferrer"
+          >
+            Bilder fra dagen
+          </a>
 
           <Header />
 
